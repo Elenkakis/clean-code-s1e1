@@ -1,15 +1,12 @@
 //Document is the DOM can be accessed in the console with document.window.
 // Tree is from the top, html, body, p etc.
-
 //Problem: User interaction does not provide the correct results.
 //Solution: Add interactivity so the user can manage daily tasks.
 //Break things down into smaller steps and take each step at a time.
-
-
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+var taskInput=document.getElementById("new-task");
+var addButton=document.getElementById("add-btn");
 var incompleteTaskHolder=document.getElementById("incompleteTasks");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -17,10 +14,10 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 //New task list item
 var createNewTaskElement=function(taskString){
 
-    var listItem=document.createElement("li");
+    var listItem = document.createElement("li");
 
     //input (checkbox)
-    var checkBox=document.createElement("input");//checkbx
+    var checkBox=document.createElement("input");//checkbox
     //label
     var label=document.createElement("label");//label
     //input (text)
@@ -33,7 +30,7 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className="task";
 
     //Each elements, needs appending
     checkBox.type="checkbox";
@@ -44,7 +41,7 @@ var createNewTaskElement=function(taskString){
     editButton.className="edit";
 
     deleteButton.className="delete";
-    deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.src="./remove.svg";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -74,32 +71,26 @@ var addTask=function(){
 }
 
 //Edit an existing task.
-
-var editTask=function(){
+let editTask = function(){
     console.log("Edit Task...");
     console.log("Change 'edit' to 'save'");
 
-
-    var listItem=this.parentNode;
-
-    var editInput=listItem.querySelector('input[type=text]');
-    var label=listItem.querySelector("label");
-    var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
+    let listItem = this.parentNode;
+    let editInput = listItem.querySelector(".user-task");
+    let label = listItem.querySelector(".task-name");
+    let editBtn = listItem.querySelector(".edit");
+    let containsClass = label.classList.contains("task-name__edit");
+    
     if(containsClass){
 
-        //switch to .editmode
-        //label becomes the inputs value.
-        label.innerText=editInput.value;
-        editBtn.innerText="Edit";
+        label.innerText = editInput.value;
+        editBtn.innerText = "Edit";
     }else{
-        editInput.value=label.innerText;
-        editBtn.innerText="Save";
-    }
-
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
+        editInput.value = label.innerText;
+        editBtn.innerText = "Save";
+    }   
+    label.classList.toggle("task-name__edit");
+    editInput.classList.toggle("user-task__edit");    
 };
 
 
@@ -172,7 +163,7 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 //for each list item
 for (var i=0; i<incompleteTaskHolder.children.length;i++){
 
-    //bind events to list items chldren(tasksCompleted)
+    //bind events to list items children(tasksCompleted)
     bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
 }
 
