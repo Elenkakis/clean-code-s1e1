@@ -43,7 +43,8 @@ button {
 button:hover {
     color:var(--btn-hover);
 }
-input, button {
+input, 
+button {
     outline:none;
 }
 .main-display {
