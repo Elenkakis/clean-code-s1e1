@@ -17,25 +17,32 @@
         <p id="topSectionForAddingElementToList">
             <label class="add-task" for="new-task">Add Item</label>
             <div class="add-list">
-                <input id="new-task"class="task user-task new-task" type="text">
+                <input id="new-task"
+                      class="task new-task" 
+                      type="text">
                 <button>Add</button>
             </div>
         </p>
         <h3>Todo</h3>
         <ul class="todo-list" id="incompleteTasks">
           <li>
-            <input class="todo-list__box" type="checkbox">
-            <label class="todo-list__task">Pay Bills</label>
-            <input class="task user-task" type="text">
+            <input class="list__box" 
+                   type="checkbox">
+            <label class="task task-name">Pay Bills</label>
+            <input class="task user-task" 
+                   type="text">
             <button class="edit">Edit</button>
             <button class="delete">
                 <img class="btn__remove" src="./remove.svg" alt="remove sign">
             </button>
           </li>
-          <li class="list__mode">
-            <input class="list__box" type="checkbox">
-            <label class="task task-name">Go Shopping</label>
-            <input type="text" value="Go Shopping" class="task user-task todo-list__mark">
+          <li class="editMode">
+            <input class="list__box" 
+                   type="checkbox">
+            <label class="task task-name task-name__edit">Go Shopping</label>
+            <input type="text" 
+                   value="Go Shopping" 
+                   class="task user-task user-task__edit">
             <button class="edit">Save</button>
             <button class="delete">
                 <img class="btn__remove" src="./remove.svg" alt="remove sigh">
@@ -43,11 +50,14 @@
           </li>
         </ul>
         <h3>Completed</h3>
-        <ul id="completed-tasks">
+        <ul id="completed-tasks" class="completed-tasks">
           <li>
-            <input class="list__box" type="checkbox" checked>
-            <label class="task done-task">See the Doctor</label>
-            <input type="text" class="task user-task">
+            <input class="list__box" 
+                   type="checkbox" 
+                   checked>
+            <label class="task task-name done-task">See the Doctor</label>
+            <input type="text" 
+                   class="task user-task">
             <button class="edit">Edit</button>
             <button class="delete">
                 <img class="btn__remove" src="./remove.svg" alt="remove sign">

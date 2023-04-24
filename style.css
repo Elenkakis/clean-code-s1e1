@@ -45,7 +45,7 @@ button:hover {
 }
 input, 
 button {
-    outline:none;
+    outline: none;
 }
 .main-display {
     width: 500px;
@@ -57,6 +57,11 @@ button {
 .main-display__picture {
     width: 100%;
 }
+.task {
+    width: 56%;
+    display: inline-block;
+    flex-grow: 1;
+}
 .checklist {
     display: block;
     width: 500px;
@@ -67,8 +72,8 @@ button {
 }
 .todo-list, 
 .completed-tasks {
-    margin:0;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 } 
 /* Heading */
 h3,
@@ -103,14 +108,22 @@ h3,
 }
 .new-task {
     width: 318px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 18px;
+    height: 21px;
+    padding: 0 9px;
+    border: 1px solid var(--bord-task);
+    background: var(--task-bg);
+    border-radius: 6px;
+    font-family: Lato, sans-serif;
+    color: var(--btn-color);
 }
 /* Task list */
-.todo-list__box {
+.list__box {
     margin: 0 10px;
 }
-.todo-list__task,
-.task-name, 
-.done-task {
+.task-name {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
@@ -133,11 +146,11 @@ h3,
 .user-task {
     display: none;
     width: 226px;
-}
-.todo-list__mark {
+} 
+.user-task__edit {
     display: inline-block;
-    width: 224px
+    width: 224px;
 }
-.task-name {
+.task-name__edit {
     display: none;
 }
