@@ -130,6 +130,7 @@ h3,
     width: 226px;
 }
 .btn__remove {
+    content: url(./remove.svg);
     height: 2em;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
